@@ -15,7 +15,7 @@ function getRandomColor() {
     return color;
 }
 
-function spawnBox() {
+function spawnTarget() {
     start = new Date().getTime();
     randomInterval = Math.floor(Math.random() * (500-1)) + 1;
     randomInterval2 = Math.floor(Math.random() * (1200-1)) + 1;
@@ -25,7 +25,7 @@ function spawnBox() {
     shape.style.backgroundColor = getRandomColor();
 }
 
-setTimeout(spawnBox, 1000);
+setTimeout(spawnTarget, 1000);
 
 shape.onclick = function() {
     end = new Date().getTime();
@@ -33,5 +33,5 @@ shape.onclick = function() {
     displayTimeElapsed.innerHTML = "Time elapsed: " + parseFloat(timeElapsed/1000).toFixed(2) + " seconds";
     shape.style.display = "none";
     randomInterval = (Math.floor(Math.random() * (3-1)) + 1) * 1000;
-    setTimeout(spawnBox, randomInterval);
+    setTimeout(spawnTarget, randomInterval);
 }
